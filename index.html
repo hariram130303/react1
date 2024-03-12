@@ -4,23 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Menu</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>
-    <div>
-      <h2>Menu Items</h2>
-      <ul>
-        <li>Burger - $10</li>
-        <li>Pizza - $12</li>
-        <li>Pasta - $8</li>
-      </ul>
-    </div>
-    <!-- Content will be injected here by React -->
-  </div>
+  <div id="root"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
-  <script src="MenuItems.js" type="module"></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@7/babel.min.js"></script>
+
+  <!-- React Components -->
+  <script type="text/babel" src="Restaurant.js"></script>
+  <script type="text/babel" src="MenuCard.js"></script>
+
+  <!-- Menu Data -->
+  <script type="text/babel" src="menuApi.js"></script>
+
+  <!-- Render the Restaurant Component -->
+  <script type="text/babel">
+    ReactDOM.render(
+      <Restaurant />,
+      document.getElementById('root')
+    );
+  </script>
 </body>
 </html>
